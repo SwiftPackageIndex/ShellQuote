@@ -1,5 +1,10 @@
 import Foundation
 
+
+// This is a port of Python's shlex.quote
+// https://github.com/python/cpython/blob/5ffdaf748d98da6065158534720f1996a45a0072/Lib/shlex.py#L323
+
+
 struct ShellQuote {
     private static let unsafe = #"[^\w@%+=:,./-]"#
 
