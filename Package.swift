@@ -4,7 +4,6 @@ import PackageDescription
 
 let package = Package(
     name: "ShellQuote",
-    platforms: [.macOS(.v13)],
     products: [
         .library(name: "ShellQuote", targets: ["ShellQuote"]),
     ],
