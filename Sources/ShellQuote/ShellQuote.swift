@@ -19,6 +19,7 @@ import Foundation
 // https://github.com/python/cpython/blob/5ffdaf748d98da6065158534720f1996a45a0072/Lib/shlex.py#L323
 
 
+/// `ShellQuote` is a micro-library to return shell-escaped input for use in POSIX shells.
 public struct ShellQuote {
     private static let unsafe = #"[^\w@%+=:,./-]"#
 

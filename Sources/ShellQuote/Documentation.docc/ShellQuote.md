@@ -2,7 +2,7 @@
 
 `ShellQuote` is a micro-library to return shell-escaped input for use in POSIX shells.
 
-## Usage
+## Introduction
 
 When using Foundation's `Process` to run subprocesses (command line invocations), the `arguments` passed in are passed to the command in a way that is safe in terms of shell command injection. For example, imagine you are accepting user input to process it with a command line tool. Let's simulate this tool with `/bin/echo`:
 
@@ -41,4 +41,17 @@ dash		kill		pax		stty
 date		ksh		ps		sync
 ```
 
+## Usage
+
 While this may look like a somewhat contrived example, it is possible to accidentally process commands in this way for instance in case a third party library were to execute commands in this way.
+
+The way to mitigate this issue is to escapce the input string via ``ShellQuote.quote``:
+
+```swift
+try Process.run(.init(fileURLWithPath: "/bin/bash"),
+                arguments: ["-c", "echo \(ShellQuote.quote(userInput))"])
+```
+
+## Credits
+
+``ShellQuote.quote`` is a port of the Python standard library command `shlex.quote`.
