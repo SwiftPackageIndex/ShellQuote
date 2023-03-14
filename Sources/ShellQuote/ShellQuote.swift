@@ -23,7 +23,10 @@ import Foundation
 public struct ShellQuote {
     private static let unsafe = #"[^\w@%+=:,./-]"#
 
-    static func hasUnsafeContent(_ input: String) -> Bool {
+    /// Returns true if input contains characters that require quoting.
+    /// - Parameter input: input string
+    /// - Returns: true/false signifying unsafe content
+    public static func hasUnsafeContent(_ input: String) -> Bool {
         input.range(of: unsafe, options: .regularExpression) != nil
     }
 
