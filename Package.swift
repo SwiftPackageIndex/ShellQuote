@@ -1,4 +1,4 @@
-// swift-tools-version: 5.7
+// swift-tools-version: 5.5
 
 // Copyright Dave Verwer, Sven A. Schmidt, and other contributors.
 //
